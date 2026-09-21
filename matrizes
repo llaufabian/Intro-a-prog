@@ -1,0 +1,49 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+#include <time.h>
+
+void main()
+{
+    srand(time(NULL));
+    
+    int matriz1 [6][6];
+    int matriz2 [6][6];
+    int matrizsom [6][6];
+
+    for(int linha = 0; linha < 6; linha ++){
+        for(int coluna = 0; coluna < 6; coluna++){
+            matriz1[linha][coluna] = rand()%10;
+            matriz2[linha][coluna] = rand()%10;
+
+            matrizsom[linha][coluna] = matriz1[linha][coluna] + matriz2[linha][coluna];
+        }
+    }
+
+    printf("Matriz 1: \n");
+
+    for(int linha = 0; linha < 6; linha ++){
+        for(int coluna = 0; coluna < 6; coluna++){
+            printf("%d ", matriz1[linha][coluna]);
+        }
+        printf("\n");
+    }
+
+    printf("\nMatriz 2: \n");
+
+    for(int linha = 0; linha < 6; linha ++){
+        for(int coluna = 0; coluna < 6; coluna++){
+            printf("%d ", matriz2[linha][coluna]);
+        }
+        printf("\n");
+    }
+
+    printf("\nMatriz 3:\n");
+
+    for(int linha = 0; linha < 6; linha ++){
+        for(int coluna = 0; coluna < 6; coluna++){
+            printf("%d ", matrizsom[linha][coluna]);
+        }
+        printf("\n");
+    }
+}
