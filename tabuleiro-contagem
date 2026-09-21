@@ -1,0 +1,46 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+#include <time.h>
+
+void main()
+{
+    srand(time(NULL));
+    
+    int tabuleiro[10][10];
+
+    for(int l=0;l<10;l++){
+        for(int c=0;c<10;c++){
+            tabuleiro[l][c] = rand()%4;
+        }
+    }
+
+    for(int l=0;l<10;l++){
+        for(int c=0;c<10;c++){
+            printf("%d ", tabuleiro[l][c]);
+        }
+        printf("\n");
+    }
+
+    int ver, ama, azu, mel;
+    ver=ama=azu=mel=0;
+
+    for(int l=0;l<10;l++){
+        for(int c=0;c<10;c++){
+            if(tabuleiro[l][c] == 0){
+                ver++;
+            }
+            else if(tabuleiro[l][c] == 1){
+                ama++;
+            }
+            else if(tabuleiro[l][c] == 2){
+                azu++;
+            }
+            else if(tabuleiro[l][c] == 3){
+                mel++;
+            }
+        }
+    }
+    
+    printf("\nA quantidade de pedras para cada cor é:\n Vermelho = %d\n Amarelo = %d\n Azul = %d\n Verde = %d", ver, ama, azu, mel);
+}
